@@ -1,0 +1,16 @@
+<div [ngClass]="{'mt-auto': true, 'text-center': true, 'list-group-item': true, 'list-group-item-success': statuslove(), 'list-group-item-danger': statuslove() == false}">
+  <div class="row">
+    <h4 class="col-4" [ngStyle]="{color: statuslovecolor()}">{{ postTitle}}</h4>
+    <h2 class="offset-3 col-4"> {{ created_at | date: 'short' | uppercase}}</h2>
+  </div>
+  <div class="row">
+    <p class="col-12" [ngStyle]="{color: statuslovecolor()}" >{{ postcontent }}</p>
+    <p>{{postloveIts}}</p>
+  </div>
+  <div class="row">
+    <button class="btn btn-success" (click)="loveit()"> Love It</button>
+    <button class="btn btn-danger" (click)="dontloveit()">Don't Love It</button>
+  </div>
+</div>
+
+
